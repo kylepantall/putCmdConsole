@@ -8,11 +8,14 @@ class Engine
     const BASIC_PLACEHOLDERS_RE = '';
 
     public static function parse(string $stencil, array $parameters) : ParsedObject {
-        $calculatedStencil = self::replaceBasicPlaceholders($stencil, $parameters);
-        return new ParsedObject($stencil, $calculatedStencil, $parameters);
+        return new ParsedObject(
+            $stencil,
+            self::getGeneratedStencilUsingBasicPlaceholders($stencil, $parameters),
+            $parameters
+        );
     }
 
-    private static function replaceBasicPlaceholders(string $stencil, array $parameters) : string {
+    private static function getGeneratedStencilUsingBasicPlaceholders(string $stencil, array $parameters) : string {
         $paramsWithValues = self::getParametersWithValues($parameters);
         $tmpStencil = $stencil;
 
