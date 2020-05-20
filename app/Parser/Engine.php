@@ -5,7 +5,7 @@ use App\Parser\Objects\ParsedObject;
 
 class Engine
 {
-    const BASIC_PLACEHOLDERS_RE = '';
+    const BASIC_PLACEHOLDERS_RE = '/\$\:(\w+)/m';
 
     public static function parse(string $stencil, array $parameters) : ParsedObject {
         return new ParsedObject(
