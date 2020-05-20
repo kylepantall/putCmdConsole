@@ -3,7 +3,7 @@
 An automated script markup language.
 
 putCmdConsole uses the putCmdEngine to parse and return automated scripts using the putCmd Markupt language.
-The markup language is generated using the combination user given paramters and provided functions. 
+The markup language is generated using the combination of user given paramters and functions. 
 An example of this can be found below:
 
 ```
