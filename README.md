@@ -32,3 +32,11 @@ class {{$:CLASS_NAME}} extends Command
     }
 }
 ```
+
+In the example above, parameters with descriptions (optional) are defined using ```{{$::PARAMETER_NAME}}``` notation. Functions can be used to manipulate generated output. 
+
+To help with formatting, the engine can understand when new lines have been provided for readability by using ```{{EOL}}``` notation (End-of-line) which will remove the carriage return returning a much tidier output.
+
+The given example is a blueprint to how to engine is being developed to work.
+
+The engine has many practicalities, such as providing an intermittent layer to developers such as generating required MySql queries - and in future editions the possibility of validating the query upon returning, or ensuring a user is authorised to use a given stencil with intermittent checks configurable by the end-user.
