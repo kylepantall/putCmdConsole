@@ -6,7 +6,7 @@ putCmdConsole uses the putCmdEngine to parse and return automated scripts using 
 The markup language is generated using the combination user given paramters and provided functions. 
 An example of this can be found below:
 
-###
+```
 namespace App\Commands;
 
 use Illuminate\Console\Scheduling\Schedule;
@@ -16,7 +16,6 @@ class {{$:CLASS_NAME}} extends Command
 {
     public static string {{$:DESCRIPTION_VARIABLE('The name of the variable')}} {{\\EOL}}
 = '{{ $:PROVIDED_DESCRIPTION('The description of your command') }}';
-
     /**
      * @return mixed
      */
@@ -32,4 +31,4 @@ class {{$:CLASS_NAME}} extends Command
 	echo "This class, {{$:CLASS_NAME}} is described by {{$:CLASS_NAME}}::{{$DESCRIPTION_VARIABLE}}";
     }
 }
-###
+```
