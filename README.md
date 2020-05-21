@@ -26,9 +26,9 @@ class {{$:CLASS_NAME}} extends Command
 
     public function automatedFunction()
     {
-	$description = {{ join(':', $:CLASS_NAME, $:DESCRIPTION_VARIABLE) }};
+	$description = '{{ join(':', $:CLASS_NAME, $:DESCRIPTION_VARIABLE) }}';
 
-	echo "This class, {{$:CLASS_NAME}} is described by {{$:CLASS_NAME}}::{{$DESCRIPTION_VARIABLE}}";
+	echo 'This class, {{$:CLASS_NAME}} is described by ' . {{$:CLASS_NAME}}::{{$DESCRIPTION_VARIABLE}};
     }
 }
 ```
