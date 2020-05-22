@@ -26,7 +26,7 @@ class ParsedObject
         return $this->stencil;
     }
 
-    public function __toString()
+    function __toString()
     {
         return $this->finalStencil;
     }
