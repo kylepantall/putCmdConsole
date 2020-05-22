@@ -8,12 +8,13 @@ class CommandObject
     private $closed = false;
     private $func = '';
 
-    function __construct()
+    function __construct($closed = false)
     {
-
+        $this->closed = $closed;
     }
 
-    function setFunction(string $func) {
+    function setFunction(string $func)
+    {
         $this->func = $func;
     }
 
@@ -21,11 +22,13 @@ class CommandObject
      * @param CommandObject|string|int $param
      * @return void
      */
-    function addParameter($param) {
+    function addParameter($param)
+    {
         array_push($this->paramters, $param);
     }
 
-    function isClosed() : bool {
+    function isClosed(): bool
+    {
         $objects = array_filter($this->paramters, function ($item) {
             if ($item instanceof CommandObject) {
                 return !$item->isClosed();
@@ -34,15 +37,16 @@ class CommandObject
             return false;
         });
 
-        return !empty($objects) && $this->closed;
+        return empty($objects) && $this->closed;
     }
 
-    function getParameters() : array {
+    function getParameters(): array
+    {
         return $this->paramters;
     }
 
-    function getFunction() : string {
+    function getFunction(): string
+    {
         return $this->func;
     }
-
 }

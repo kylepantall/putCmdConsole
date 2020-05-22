@@ -13,18 +13,18 @@ class Parse extends Command
 
     protected $description = 'Parse a given stencil with provided paramaters.';
 
-    public function handle() : void
+    public function handle(): void
     {
-       $paramters = $this->argument('parameters');
-       $stencil = $this->argument('stencil');
+        $paramters = $this->argument('parameters');
+        $stencil = $this->argument('stencil');
 
-       if (File::exists($stencil)) {
-           $stencil = file_get_contents($stencil);
-       }
+        if (File::exists($stencil)) {
+            $stencil = file_get_contents($stencil);
+        }
 
-       $parsedObject = Engine::parse(
-           $stencil,
-           $paramters
+        $parsedObject = Engine::parse(
+            $stencil,
+            $paramters
         );
 
         $this->output->text($parsedObject);

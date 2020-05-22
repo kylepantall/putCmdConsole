@@ -2,7 +2,8 @@
 
 namespace App\Parser\Objects;
 
-class ParsedObject {
+class ParsedObject
+{
 
     private array $parameters = [];
     private string $stencil = '';
@@ -15,11 +16,13 @@ class ParsedObject {
         $this->finalStencil = $finalStencil;
     }
 
-    function getParameters() : array {
+    function getParameters(): array
+    {
         return $this->parameters;
     }
 
-    function getStencil() : string {
+    function getStencil(): string
+    {
         return $this->stencil;
     }
 
