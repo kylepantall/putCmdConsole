@@ -16,7 +16,6 @@ class CommandObjectTest extends TestCase
         $this->assertTrue($item->isClosed());
     }
 
-
     function argumentArray()
     {
         return [
