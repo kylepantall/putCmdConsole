@@ -1,6 +1,8 @@
 <?php
 namespace App\Parser;
 
+use App\Parser\Command\CommandParser;
+use App\Parser\Command\Parser;
 use App\Parser\Objects\ParsedObject;
 
 class Engine
@@ -8,6 +10,7 @@ class Engine
     const BASIC_PLACEHOLDERS_RE = '/\$\:(\w+)/m';
 
     public static function parse(string $stencil, array $parameters) : ParsedObject {
+        CommandParser::parse();
         return new ParsedObject(
             $stencil,
             self::getGeneratedStencilUsingBasicPlaceholders($stencil, $parameters),
